@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 
 import org.firstinspires.ftc.teamcode.libs.util.Button;
 
-public class XGamepad {
+public class XGamepad{
 
     // Joystick position values
     private float left_stick_x;
@@ -56,9 +56,9 @@ public class XGamepad {
 
     }
 
-    public void update_gamepad(){
+    public void update_gamepad() {
 
-        //updates the values of all joysticks and triggers
+        //update_states the values of all joysticks and triggers
         left_stick_x = gamepad.left_stick_x;
         left_stick_y = gamepad.left_stick_y;
         right_stick_x = gamepad.right_stick_x;
@@ -67,30 +67,30 @@ public class XGamepad {
         left_trigger_pressure = gamepad.left_trigger;
         right_trigger_pressure = gamepad.right_trigger;
 
-        //updates the values of all buttons
-        dpad_up.update(gamepad.dpad_up);
-        dpad_down.update(gamepad.dpad_down);
-        dpad_left.update(gamepad.dpad_left);
-        dpad_right.update(gamepad.dpad_right);
+        //update_states the values of all buttons
+        dpad_up.update_state(gamepad.dpad_up);
+        dpad_down.update_state(gamepad.dpad_down);
+        dpad_left.update_state(gamepad.dpad_left);
+        dpad_right.update_state(gamepad.dpad_right);
 
-        a.update(gamepad.a);
-        b.update(gamepad.b);
-        x.update(gamepad.x);
-        y.update(gamepad.y);
+        a.update_state(gamepad.a);
+        b.update_state(gamepad.b);
+        x.update_state(gamepad.x);
+        y.update_state(gamepad.y);
 
-        left_bumper.update(gamepad.left_bumper);
-        right_bumper.update(gamepad.right_bumper);
+        left_bumper.update_state(gamepad.left_bumper);
+        right_bumper.update_state(gamepad.right_bumper);
 
-        left_stick_button.update(gamepad.left_stick_button);
-        right_stick_button.update(gamepad.right_stick_button);
+        left_stick_button.update_state(gamepad.left_stick_button);
+        right_stick_button.update_state(gamepad.right_stick_button);
 
-        guide.update(gamepad.guide);
-        start.update(gamepad.start);
-        back.update(gamepad.back);
+        guide.update_state(gamepad.guide);
+        start.update_state(gamepad.start);
+        back.update_state(gamepad.back);
 
-        if(start.is_pressed()){
+        if (start.is_pressed()) {
 
-            a.update(false);
+            a.update_state(false);
 
         }
 

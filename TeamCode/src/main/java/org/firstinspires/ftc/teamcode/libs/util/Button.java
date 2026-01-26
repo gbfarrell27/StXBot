@@ -31,7 +31,7 @@ public class Button {
     /**
      * @param new_state The new value of the button (pressed or not pressed)
      */
-    public void update(boolean new_state){
+    public void update_state(boolean new_state){
 
         if(new_state != current_state){
 

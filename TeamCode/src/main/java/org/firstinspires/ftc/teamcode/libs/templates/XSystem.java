@@ -1,4 +1,60 @@
 package org.firstinspires.ftc.teamcode.libs.templates;
 
-public class XSystem {
+import org.firstinspires.ftc.teamcode.libs.components.XDriverStation;
+import org.firstinspires.ftc.teamcode.libs.util.Scheduler;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class XSystem {
+
+    private final XOpMode op;
+
+    private final Scheduler scheduler;
+
+    private final XDriverStation driver_station;
+
+    public XSystem(XOpMode op) {
+
+        this.op = op;
+        this.scheduler = op.getScheduler();
+        this.driver_station = op.getDriver_station();
+
+    }
+
+    public void init(){
+
+
+    }
+
+
+    public void init_loop(){
+
+
+
+    }
+
+    public void start(){
+
+
+
+    }
+
+    public void loop(){
+
+
+    }
+
+    public void control_loop(){
+
+
+
+    }
+
+    public void stop(){
+
+
+
+    }
+
 }

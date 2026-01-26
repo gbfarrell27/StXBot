@@ -40,10 +40,15 @@ public class Event {
     }
 
     public String getID() {
+
         return ID;
+
     }
+
     public void setID(String ID) {
+
         this.ID = ID;
+
     }
 
     public Stopwatch getStopwatch(){
@@ -51,5 +56,10 @@ public class Event {
         return stopwatch;
     }
 
+    public Runnable getEvent(){
+
+        return event;
+
+    }
 
 }

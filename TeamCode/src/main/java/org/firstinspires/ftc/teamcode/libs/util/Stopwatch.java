@@ -1,20 +1,10 @@
 package org.firstinspires.ftc.teamcode.libs.util;
 
-import java.util.concurrent.TimeUnit;
-
 public class Stopwatch {
 
     private long start_time;
 
     private long target_time;
-
-    private int reset_count = 0;
-
-
-    public Stopwatch(){
-
-
-    }
 
     public Stopwatch(long millis){
 
@@ -25,7 +15,6 @@ public class Stopwatch {
     public void reset(){
 
         start_time = System.nanoTime();
-        reset_count++;
 
     }
 
@@ -41,20 +30,9 @@ public class Stopwatch {
 
     }
 
-    public long elapsed_milli_time(){
-
-        return elapsed_nano_time() / 1_000_000L;
-
-    }
-
     public long remaining_nano_time(){
 
-        return Math.max(0, target_time * 1_000_000L - elapsed_nano_time());
-
-    }
-    public long remaining_milli_time(){
-
-        return remaining_nano_time() / 1_000_000L;
+        return Math.max(0, target_time - elapsed_nano_time());
 
     }
 
@@ -62,12 +40,19 @@ public class Stopwatch {
 
         reset();
 
-        target_time = millis;
+        target_time = millis * 1_000_000L;
 
     }
+
     public boolean is_timer_done(){
 
-        return target_time != 0 && !(remaining_milli_time() >= 0);
+        return is_timer_running() && remaining_nano_time() == 0;
+
+    }
+
+    public boolean is_timer_running(){
+
+        return target_time != 0 && remaining_nano_time() > 0;
 
     }
 
