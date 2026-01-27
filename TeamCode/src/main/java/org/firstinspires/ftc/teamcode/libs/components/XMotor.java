@@ -13,6 +13,8 @@ public class XMotor {
     private DcMotorEx motor;
 
 
+    public void setRPM(double target){
+        motor.setVelocity(rpm * 360 / 60);
 
 
 
